@@ -46,7 +46,24 @@ int main() {
             //ask how many of the rooms on the current floor are occupied
             cout << "How many of the " << rooms << " rooms are occupied?" << endl;
             cin >> occupied;
-            cout << occupied << " occupied rooms on floor " << x << endl;
+            
+            if(occupied == rooms){
+                cout << "All the rooms are occupied on floor " << x << endl;
+            } else if(occupied < rooms){
+                cout << occupied << " occupied rooms on floor " << x << endl;
+            } else if(occupied > rooms){
+            //EXTRA: Prevents more occupied rooms than there are rooms on the x foor
+                while (occupied > rooms){
+                    cout << "Thats an invalid action: Cannot have " << occupied << " occupied rooms when there are only " << rooms << " rooms on the floor. Please re-enter the correct amount of occupied rooms: ";
+                    cin >> occupied;
+                    
+                    if(occupied < rooms){
+                        cout << occupied << " occupied rooms on floor " << x << endl;  
+                    } else {
+                        cout << "Uhh please re-read the error: " << endl;
+                    }
+                }
+            }
             
             //using the global scope, this adds the current itterations amount of rooms
             //and amount of occupied rooms and adds them to the current total amount
@@ -62,6 +79,6 @@ int main() {
     percent = (totalOccupied/totalRooms)*100;
     
     cout << "The hotel has " << totalRooms << " rooms across " << floors << " floors.\n";
-    cout << "Theres "<< totalOccupied << " occupied rooms and " << available << " are available.\n";
+    cout << "There are "<< totalOccupied << " occupied rooms and " << available << " available rooms.\n";
     cout << percent << "% of the rooms are occupied.\n";
 }
