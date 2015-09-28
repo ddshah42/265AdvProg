@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//Protoypes
+//Protoype
 double getSales();
 void findHighest(double, double, double, double);
 
