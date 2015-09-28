@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+ 
 int main() {
     // shouldnt have 0 floors
     int floors = 1, available = 0;
@@ -27,7 +27,7 @@ int main() {
         
         // this statement skips the 13th "floor"/iteration like the book says to.
         if (x == 13){
-            //skip the 13th floor if there is one
+            //skip the 13th floor if there is one to be skiped
         }else{
             //ask how many rooms there are on the current floor of the itteration
             cout << "How many rooms are on floor " << x << " ?" << endl;
