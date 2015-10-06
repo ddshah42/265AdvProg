@@ -4,45 +4,54 @@ using namespace std;
 double dailyEats(double, double, double);
 
 int main() {
-    dailyEats(7,7,2);
+    dailyEats(800,700,3);
 }
 
-
 double dailyEats(double departureTime, double arrivalTime, double tripDays){
-    double total = 0, cost = 0, covered = 0, totalDebt = 0, trip = 0, bExpense = 0;
-    string answer = "";
+    int i, x, dayOne = 1, mealPos = 0, fDayMealStart = 0, dMealVal = 3;
+    double cost = 0, covered = 0, totalDebt = 0, bExpense = 0;
     string mealType[3] = {"breakfast", "lunch", "dinner"};
-    int eachMax[4] = {0, 9, 12, 16};
-    int startDay = 1, mealPos = 0;
-    
-    //tripDays needs to have 1 added to its value for it to work.
-    //The days start at 1 not 0 but the array starts at 0 so were starting it at 1 too
-    tripDays += 1;
-    
-    for(int i=startDay;i < tripDays;i++){
-        for(int x=mealPos;x < 3;x++){
+    int mealMax[4] = {0, 9, 12, 16};
+    string answer = "";
+    tripDays += 1; //tripDays needs to have one added to its value for it to work. The days start at 1 not 0
+    for(i = dayOne;i < tripDays;i++){
+        for(x = mealPos;x < dMealVal;x++){
+            if(fDayMealStart != 0){
+                //will not set the meal start for day one if
+            }else if(fDayMealStart == 0){
+                if(i = 1 && arrivalTime < 700){
+                    fDayMealStart++;
+                    //Nothing. Program will go on as planned
+                }else if(i = 1 && arrivalTime < 1200){
+                    x = 1;
+                    fDayMealStart++;
+                    cout << "Only lunch and Dinner will be covered on the first day.\n";
+                }else if(i = 1 && arrivalTime < 1800){
+                    x = 2;
+                    fDayMealStart++;
+                    cout << "Only dinner will be covered on the first day.";
+                }
+            }
             cout << "\nDid you have " << mealType[x] << " on day " << i << "? [Y/N]: ";
             cin >> answer;
             
             if(answer == "Y" || answer == "y"){
                 cout << "\nHow much did it cost?:";
                 cin >> cost;
-                
                 while(cost < 0){
                     cout << "Really? So you were paid to eat there?\n";
                     cout << "Please CORRECTLY enter the amount spent, value more than $0: ";
                     cin >> cost;
                 }
-                
-                if(cost >= eachMax[x+1]){
-                    if(cost == eachMax[x+1]){
-                        covered = covered + eachMax[x+1];
-                        cout <<"\n"<< mealType[x] << " expenses covered: " << eachMax[x+1] << endl;
-                    }else if(cost > eachMax[x+1]){
+                if(cost >= mealMax[x+1]){
+                    if(cost == mealMax[x+1]){
+                        covered = covered + mealMax[x+1];
+                        cout <<"\n"<< mealType[x] << " expenses covered: " << mealMax[x+1] << endl;
+                    }else if(cost > mealMax[x+1]){
                         double debt = 0;
-                        debt = cost - eachMax[x+1];
+                        debt = cost - mealMax[x+1];
                         totalDebt = totalDebt + debt;
-                        bExpense = eachMax[x+1];
+                        bExpense = mealMax[x+1];
                         covered = covered + bExpense;
                         
                         if(debt == 0){
@@ -52,20 +61,17 @@ double dailyEats(double departureTime, double arrivalTime, double tripDays){
                             cout <<".\ndebt added: "<<debt<<".\n";
                         }
                     }
-                }else if(cost < eachMax[x+1]){
+                }else if(cost < mealMax[x+1]){
                     covered = covered + cost;
                     cout <<  mealType[x] << " expenses covered: $" << cost << endl;
                 }
             } else if(answer == "N" || answer == "n"){
                 cout << "No " << mealType[x] << ", got it. \n";
             }
-            
-            answer = "";
-            cost = 0;
+            answer = ""; cost = 0;
         }
-        startDay++;
+        dayOne++;
     }
-    
     cout << "\n\nTotal Debt: " << totalDebt << endl;
     cout << "Food expenses covered: " << covered << endl;
 }
