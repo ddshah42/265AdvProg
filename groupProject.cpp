@@ -42,18 +42,6 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
             if(mealType[x] != "0"){
                 cout << "\nDid you have " << mealType[x] << " on day " << i << "? [Y/N]: ";
                 cin >> answer;
-                //ugly code but I hacked it together for it to work so whatever
-                //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
-                if(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
-                    while(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
-                        cout << "\nI didnt quite get that. ";
-                        cout << "Did you have " << mealType[x] << " on day " << i << " ? [Y/N]: ";
-                        cin >> answer;
-                        if(answer == "Y" || answer == "y" || answer == "N" || answer == "n"){
-                            break;
-                        }
-                    }
-                }
                 if(answer == "Y" || answer == "y"){
                     cout << "\nHow much did it cost?:";
                     cin >> cost;
@@ -84,9 +72,21 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
                         cout <<  mealType[x] << " expenses covered: $" << cost << endl;
                     }
                 } else if(answer == "N" || answer == "n"){
-                    cout << "No " << mealType[x] << ", got it. \n";
+                    cout << "No " << mealType[x] << ", got it. \n"; } 
+                else if(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
+                    while(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
+                        cout << "\nI didnt quite get that. ";
+                        cout << "Did you have " << mealType[x] << " on day " << i << " ? [Y/N]: ";
+                        cin >> answer;
+                        if(answer == "Y" || answer == "y" || answer == "N" || answer == "n"){
+                //COPY OF LINES 48- --> 78 START        //COPY OF LINES 48- --> 78 START
+                //ugly code but I hacked it together for it to work so whatever. Had to do it this way because this crap ass language wont let me do what I wanted to do. It kept throwing an error. so I compressed a copy of lines 48 --> 78 and inserted it here.
+                            if(answer=="Y"||answer=="y"){cout<<"\nHow much did it cost?:";cin>>cost;while(cost<0){cout<<"Really? So you were paid to eat there?\n";cout <<"Please CORRECTLY enter the amount spent, value more than $0: ";cin>>cost;}if(cost>=mealMax[x]){if(cost==mealMax[x]){covered=covered+mealMax[x];cout<<"\n"<<mealType[x]<<"expenses covered: "<< mealMax[x]<<endl;}else if(cost>mealMax[x]){double debt=0;debt=cost-mealMax[x];totalDebt=totalDebt+debt;bExpense=mealMax[x];covered=covered+bExpense;if(debt==0){cout<<mealType[x]<<" expenses covered: $"<<bExpense<<".\n\n";}else{cout<<mealType[x]<< " expenses covered: $"<<bExpense;cout <<".\ndebt added: "<<debt<<".\n";}}}else if(cost<mealMax[x]){covered=covered+cost;cout<<mealType[x]<<" expenses covered: $"<<cost<<endl;}}else if(answer=="N"||answer=="n"){cout<<"No "<< mealType[x]<<", got it. \n";}
+                //COPY OF LINES 48- --> 78 END      //COPY OF LINES 48- --> 78 END
+                            break;
+                        }
+                    }
                 }
-                //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
             answer = ""; cost = 0;
             }
         }
@@ -95,8 +95,6 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
     cout << "Food expenses covered: $" << covered << endl;
 }
 
-    //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
-    
     //Program should only take the allowable meals
     //company allows up to:
     //$9 for breeakfast
