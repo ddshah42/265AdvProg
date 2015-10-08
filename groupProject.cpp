@@ -2,14 +2,14 @@
 using namespace std;
 double dailyEats(double, double, double);
 int main() {
-    dailyEats(799,1000,2);
+    dailyEats(799,1500,2);
 }
 double dailyEats(double arrivalTime, double departureTime, double tripDays){
     int i, x, f, mealPos = 0, fDayMealStart = 0, onlyOnce = 0;
     int dMealVal = 3, intTripDays = tripDays;//sets double tripDays to int
     double cost = 0, covered = 0, totalDebt = 0, bExpense = 0;
     string mealType[3] = {"breakfast", "lunch", "dinner"};
-    int mealMax[4] = {0, 9, 12, 16};
+    int mealMax[3] = {9, 12, 16};
     string answer = ""; //tripDays += 1; //tripDays needs to have one added to its value for it to work. The days start at 1 not 0. // If you uncomment this then you need to change the "<=" in "i <= tripDays" to an "<" sign
     for(i = 1;i <= tripDays;i++){
         if(i == intTripDays){
@@ -25,7 +25,7 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
                 mealType[0] = {"0"}; mealType[1] = {"0"}; mealType[2] = {"0"};
             }
         }
-        for(x = mealPos;x < dMealVal;x++){
+        for(x = mealPos;x < dMealVal;x++){ //could of reversed this for the departureTime functionallity *Face palm*
             if(fDayMealStart != 0){ //will not set the meal start for day one if
             }else if(fDayMealStart == 0){
                 if(i = 1 && arrivalTime < 800){
@@ -42,6 +42,18 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
             if(mealType[x] != "0"){
                 cout << "\nDid you have " << mealType[x] << " on day " << i << "? [Y/N]: ";
                 cin >> answer;
+                //ugly code but I hacked it together for it to work so whatever
+                //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
+                if(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
+                    while(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
+                        cout << "\nI didnt quite get that. ";
+                        cout << "Did you have " << mealType[x] << " on day " << i << " ? [Y/N]: ";
+                        cin >> answer;
+                        if(answer == "Y" || answer == "y" || answer == "N" || answer == "n"){
+                            break;
+                        }
+                    }
+                }
                 if(answer == "Y" || answer == "y"){
                     cout << "\nHow much did it cost?:";
                     cin >> cost;
@@ -74,26 +86,17 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
                 } else if(answer == "N" || answer == "n"){
                     cout << "No " << mealType[x] << ", got it. \n";
                 }
+                //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
             answer = ""; cost = 0;
             }
         }
     }
-    cout << "\n\nTotal Debt: " << totalDebt << endl;
-    cout << "Food expenses covered: " << covered << endl;
+    cout << "\n\nTotal Debt: $" << totalDebt << endl;
+    cout << "Food expenses covered: $" << covered << endl;
 }
 
-/*        
-    if(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
-        while(answer != "Y" || answer != "y" || answer != "N" || answer != "n"){
-            cout << "\nI didnt quite get that. ";
-            cout << "Did you have " << mealType[x] << " on day " << i << " ? [Y/N]: ";
-            cin >> answer;
-        }
-    } else {
-        cout << "\nOh Okay, ";
-    }
-*/
-
+    //CHANGE TO SWITCH STATEMENT FROM LINES 46 -> 87
+    
     //Program should only take the allowable meals
     //company allows up to:
     //$9 for breeakfast
