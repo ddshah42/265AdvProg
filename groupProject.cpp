@@ -1,50 +1,54 @@
 #include <iostream>
 using namespace std;
-double dailyEats(double, double, double);
+double dailyEats(double, double, double);//departureTime,arrivalTime,tripDays
 
 double covered = 0, totalDebt = 0;
 
 int main() {
-    dailyEats(799,1500,2);
-    cout << "\nwe're back in the main!\n";
+    dailyEats(600,1950,2);
+    cout << "\nWe're back in main!\n";
     cout << "\nTotal Debt: $" << totalDebt << "\nFood expenses covered: $" << covered << endl;
 }
 
-double dailyEats(double arrivalTime, double departureTime, double tripDays){
-    int i, x, f, mealPos = 0, fDayMealStart = 0, onlyOnce = 0;
-    int dMealVal = 3, intTripDays = tripDays;//sets double tripDays to int
+double dailyEats(double departureTime, double arrivalTime, double tripDays){
+    int i, x, setX = 0, fDayMealStart = 0, onlyOnce = 0;
     double cost = 0, bExpense = 0;
     string mealType[3] = {"breakfast", "lunch", "dinner"};
     int mealMax[3] = {9, 12, 16};
     string answer = ""; //tripDays += 1; //tripDays needs to have one added to its value for it to work. The days start at 1 not 0. // If you uncomment this then you need to change the "<=" in "i <= tripDays" to an "<" sign
+    
     for(i = 1;i <= tripDays;i++){
-        if(i == intTripDays){
-            if(departureTime < 700){
-                mealType[1] = "0"; mealType[2] = "0";
-                if(onlyOnce == 0){cout << "\n ****** Only breakfast is being covered ****** \n"; onlyOnce++;}
-            }else if(departureTime < 1200){
-                mealType[2] = "0";
-                if(onlyOnce == 0){cout << "\n ****** Only breakfast & lunch is being covered ****** \n"; onlyOnce++;}
-            }else if(departureTime < 1800){
-                
-            } else {
+        setX = 0;
+        if(fDayMealStart == 0 && i == 1){ //will not set the meal start for day one if
+            if(departureTime >= 0 && departureTime <= 699){// if arrival is before 7am, breakfast is allowed as an expense
+                cout << "You're covered. ᕕ(՞ ᗜ ՞)ᕗ";
+                fDayMealStart++;
+            }else if(departureTime >= 700 && departureTime < 1200){// if arrival is before 12pm, breakfast is allowed as an expense
+                cout << "Only lunch and Dinner is covered on the first day. ┌(▀¯▀)┘ \n";
+                setX = 1; fDayMealStart++;
+            }else if(departureTime >= 1200 && departureTime < 1800){// if arrival is before 6pm, breakfast is allowed as an expense
+                cout << "Only dinner is covered on the first day. ლ(ಥДಥ)ლ \n";
+                setX = 2; fDayMealStart++;
+            }else if(departureTime >= 1800 && departureTime <= 2400){
+                cout << "Sorry nothing is covered on the first day. Its after 6pm.  (╯°□°)╯︵ ┻━┻ \n";
+                setX = 3; fDayMealStart++;
+        }   }
+        
+        if(i == tripDays){
+            if(0 <= arrivalTime && arrivalTime <= 800){
                 mealType[0] = "0"; mealType[1] = "0"; mealType[2] = "0";
-            }
-        }
-        for(x = mealPos;x < dMealVal;x++){ //could of reversed this for the departureTime functionallity *Face palm*
-            if(fDayMealStart != 0){ //will not set the meal start for day one if
-            }else if(fDayMealStart == 0){
-                if(i = 1 && arrivalTime < 800){
-                    fDayMealStart++; //Nothing. Program will go on as planned
-                }else if(i = 1 && arrivalTime < 1300){
-                    x = 1;
-                    fDayMealStart++;
-                    cout << "Only lunch and Dinner will be covered on the first day.\n";
-                }else if(i = 1 && arrivalTime < 1900){
-                    x = 2;
-                    fDayMealStart++;
-                    cout << "Only dinner will be covered on the first day.";
-            }   }
+                if(onlyOnce == 0){cout << "\nSorry, nothing is covered on the last day, day "<<i<<".  (╯°□°)╯︵ ┻━┻ \n"; onlyOnce++;}
+            }else if(800 < arrivalTime && arrivalTime <= 1300){ //if arrival is after 8am, breakfast is allowed as an expense
+                mealType[1] = "0"; mealType[2] = "0";
+                if(onlyOnce == 0){cout << "\nOnly breakfast is covered on the last day. ლ(ಥДಥ)ლ "; onlyOnce++;}
+            }else if(1300 < arrivalTime && arrivalTime <= 1900){ //if arrival is after 1pm, lunch is allowed as an expense
+                mealType[2] = "0";
+                if(onlyOnce == 0){cout << "\nOnly breakfast & lunch is covered on the last day. ┌(▀¯▀)┘ \n"; onlyOnce++;}
+            }else if(1900 < arrivalTime && arrivalTime <= 2400){ //if arrival is after 7pm, dinner is allowed as an expense 
+                if(onlyOnce == 0){cout << "\nYou're covered on the last day, day "<<i<<". ᕕ(՞ ᗜ ՞)ᕗ \n"; onlyOnce++;}
+        }   }
+        
+        for(x = setX;x < 3;x++){ //could of reversed this for the departureTime functionallity *Face palm*
             if(mealType[x] != "0"){
                 cout << "\nDid you have " << mealType[x] << " on day " << i << "? [Y/N]: ";
                 cin >> answer;
@@ -104,13 +108,3 @@ double dailyEats(double arrivalTime, double departureTime, double tripDays){
     //$9 for breeakfast
     //$12 for lunch
     //$16 for dinner
-
-    //Checks time of arrival
-    //if arrival is before 8am, breakfast is allowed as an expense
-    //if arrival is before 1pm, lunch is allowed as an expense
-    //if arrival is before 7pm, dinner is allowed as an expense
-    
-    //Checks time of depature
-    //if departure is before 7am, breakfast is allowed as an expense
-    //if departure is before 12 noon, lunch is allowed as an expense
-    //if departure is before 6pm, dinner is allowed as an expense 
