@@ -19,12 +19,12 @@ int main() {
         cin >> answer;
         
         while(answer < 0){
-            cout << "\nERROR: INVALID NUMBER \nEnter the Rainfall for the month of "<<months[i]<<": ";
+            cout << "\nERROR: INVALID NUMBER \nEnter the Rainfall for the month of " << months[i] << ": ";
             cin >> answer;  
         }
         
         monthlyRain[i] = answer;
-        cout << "You entered "<< monthlyRain[i] << " for the month of "<<months[i]<<".\n";
+        cout << "You entered "<< monthlyRain[i] << " for the month of " << months[i] << ".\n";
     }
     
     for(int i = 0;i < TOTAL_MONTHS;i++){
@@ -35,13 +35,13 @@ int main() {
     cout << "\nTotal yearly rainfall: "<< totalRainFall << endl;
     
     double avgRain = calcAvgRain(monthlyRain);
-    cout << "\nAverage yearly rainfall: "<< avgRain << endl;
+    cout << "\nAverage monthly rainfall: "<< avgRain << endl;
     
     double highRain = getHRain(monthlyRain);
-    cout << "\nHighest yearly rainfall is the month of "<< months[highestMonth] << " with " << highRain << endl;
+    cout << "\nHighest monthly rainfall is the month of "<< months[highestMonth] << " with " << highRain << endl;
     
     double lowRain = getLRain(monthlyRain, highRain);
-    cout << "\nLowest yearly rainfall is the month of "<< months[lowestMonth] << " with " << lowRain << endl;
+    cout << "\nLowest monthly rainfall is the month of "<< months[lowestMonth] << " with " << lowRain << endl;
 }
 
 double calcTotalRain(double rain[]){
@@ -67,8 +67,7 @@ double getHRain(double rain[]){
         if(rain[i] > target){
             target = rain[i];
             highestMonth = i;
-        }
-    }
+    }    }
     return target;
 }
 
@@ -78,7 +77,6 @@ double getLRain(double rain[], double n){
         if(rain[i] < target){
             target = rain[i];
             lowestMonth = i;
-        }
-    }
+    }   }
     return target;
 }
