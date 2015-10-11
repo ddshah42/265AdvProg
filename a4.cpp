@@ -38,10 +38,10 @@ int main() {
     cout << "\nAverage monthly rainfall: "<< avgRain << endl;
     
     double highRain = getHRain(monthlyRain);
-    cout << "\nHighest monthly rainfall is the month of "<< months[highestMonth] << " with " << highRain << endl;
+    cout << "\nHighest monthly rainfall of the year is the month of " << months[highestMonth] << " with " << highRain << endl;
     
     double lowRain = getLRain(monthlyRain, highRain);
-    cout << "\nLowest monthly rainfall is the month of "<< months[lowestMonth] << " with " << lowRain << endl;
+    cout << "\nLowest monthly rainfall of the year is the month of " << months[lowestMonth] << " with " << lowRain << endl;
 }
 
 double calcTotalRain(double rain[]){
