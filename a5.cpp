@@ -1,5 +1,5 @@
 #include <iostream>
-#include <limits>
+#include <limits> //http://stackoverflow.com/questions/8690567/setting-an-int-to-infinity-in-c
 using namespace std;
 
 const int NUM_ROWS = 2;
@@ -128,7 +128,7 @@ int getHighestInRow(int num[][NUM_COLS], int y){
 }
 
 int getLowestInRow(int num[][NUM_COLS], int y){
-    int x, value = std::numeric_limits<int>::max();
+    int x, value = numeric_limits<int>::max(); //http://stackoverflow.com/questions/8690567/setting-an-int-to-infinity-in-c
     value = num[y][0];
     for(x = 0;x < NUM_COLS;x++){
         if(num[y][x] < value){
