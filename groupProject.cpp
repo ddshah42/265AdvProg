@@ -2,12 +2,13 @@
 using namespace std;
 double dailyEats(double, double, double);//departureTime,arrivalTime,tripDays
 
-double covered = 0, totalDebt = 0;
+double allowedMeals = 0, totalMealDebt = 0, totalMealCost = 0;
 
 int main() {
-    dailyEats(600,1950,2);
+    dailyEats(700,1950,2);
     cout << "\nWe're back in main!\n";
-    cout << "\nTotal Debt: $" << totalDebt << "\nFood expenses covered: $" << covered << endl;
+    cout << "\nEmployees Expenses: $" << totalMealDebt << "\n Employees food expenses covered: $";
+    cout << allowedMeals << "\nTotal Expenses, debt and covered expenses: $" << totalMealCost;
 }
 
 double dailyEats(double departureTime, double arrivalTime, double tripDays){
@@ -62,14 +63,16 @@ double dailyEats(double departureTime, double arrivalTime, double tripDays){
                     }
                     if(cost >= mealMax[x]){
                         if(cost == mealMax[x]){
-                            covered = covered + mealMax[x];
+                            allowedMeals = allowedMeals + mealMax[x];
+                            totalMealCost = totalMealCost + cost;
                             cout <<"\n"<< mealType[x] << " expenses covered: " << mealMax[x] << endl;
                         }else if(cost > mealMax[x]){
                             double debt = 0;
                             debt = cost - mealMax[x];
-                            totalDebt = totalDebt + debt;
+                            totalMealDebt = totalMealDebt + debt;
+                            totalMealCost = totalMealCost + cost;
                             bExpense = mealMax[x];
-                            covered = covered + bExpense;
+                            allowedMeals = allowedMeals + bExpense;
                             if(debt == 0){
                                 cout << mealType[x] << " expenses covered: $"<<bExpense<<".\n\n";
                             } else {
@@ -78,7 +81,8 @@ double dailyEats(double departureTime, double arrivalTime, double tripDays){
                             }
                         }
                     }else if(cost < mealMax[x]){
-                        covered = covered + cost;
+                        allowedMeals = allowedMeals + cost;
+                        totalMealCost = totalMealCost + cost;
                         cout <<  mealType[x] << " expenses covered: $" << cost << endl;
                     }
                 } else if(answer == "N" || answer == "n"){
@@ -91,7 +95,7 @@ double dailyEats(double departureTime, double arrivalTime, double tripDays){
                         if(answer == "Y" || answer == "y" || answer == "N" || answer == "n"){
                 //COPY OF LINES 48- --> 78 START        //COPY OF LINES 48- --> 78 START
                 //ugly code but I hacked it together for it to work so whatever. Had to do it this way because this crap ass language wont let me do what I wanted to do. It kept throwing an error. so I compressed a copy of lines 48 --> 78 and inserted it here.
-                            if(answer=="Y"||answer=="y"){cout<<"\nHow much did it cost?:";cin>>cost;while(cost<0){cout<<"Really? So you were paid to eat there?\n";cout <<"Please CORRECTLY enter the amount spent, value more than $0: ";cin>>cost;}if(cost>=mealMax[x]){if(cost==mealMax[x]){covered=covered+mealMax[x];cout<<"\n"<<mealType[x]<<"expenses covered: "<< mealMax[x]<<endl;}else if(cost>mealMax[x]){double debt=0;debt=cost-mealMax[x];totalDebt=totalDebt+debt;bExpense=mealMax[x];covered=covered+bExpense;if(debt==0){cout<<mealType[x]<<" expenses covered: $"<<bExpense<<".\n\n";}else{cout<<mealType[x]<<" expenses covered: $"<<bExpense;cout <<".\ndebt added: "<<debt<<".\n";}}}else if(cost<mealMax[x]){covered=covered+cost;cout<<mealType[x]<<" expenses covered: $"<<cost<<endl;}}else if(answer=="N"||answer=="n"){cout<<"No "<< mealType[x]<<", got it. \n";}
+                            if(answer == "Y" || answer == "y"){cout << "\nHow much did it cost?:";cin >> cost;while(cost < 0){cout << "Really? So you were paid to eat there?\n";cout << "Please CORRECTLY enter the amount spent, value more than $0: ";cin >> cost;}if(cost >= mealMax[x]){if(cost == mealMax[x]){allowedMeals = allowedMeals + mealMax[x];totalMealCost = totalMealCost + cost;cout <<"\n"<< mealType[x] << " expenses covered: " << mealMax[x] << endl;}else if(cost > mealMax[x]){double debt = 0;debt = cost - mealMax[x];totalMealDebt = totalMealDebt + debt;totalMealCost = totalMealCost + cost;bExpense = mealMax[x];allowedMeals = allowedMeals + bExpense;if(debt == 0){cout << mealType[x] << " expenses covered: $"<<bExpense<<".\n\n";} else {cout << mealType[x] << " expenses covered: $"<< bExpense;cout <<".\ndebt added: "<<debt<<".\n";}}}else if(cost < mealMax[x]){allowedMeals = allowedMeals + cost;totalMealCost = totalMealCost + cost;cout <<  mealType[x] << " expenses covered: $" << cost << endl;}}else if(answer == "N" || answer == "n"){cout << "No " << mealType[x] << ", got it. \n"; }  
                 //COPY OF LINES 48- --> 78 END      //COPY OF LINES 48- --> 78 END
                             break;
                         }
