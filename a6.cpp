@@ -16,6 +16,8 @@ int main(){
     arrayPtr = arrayAllocator(number);
     cout << "Outside, It's located at the address " << &arrayPtr << endl;
     cout << "\nThe array has space for " << number << " different integers.\n";
+
+    return 0;
 }
 
 int arrayAllocator(int num){
