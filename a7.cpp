@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+//SOurces that helped:
+//PG 648 in Starting out with C++ - Early Objects - 7th edition
+
 /* a7.app: Array Expander
 Write a function that accepts an INT array and the array's size as arguments.
 The function should create a new array that is twice the size of the argument
