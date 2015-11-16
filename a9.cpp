@@ -10,14 +10,12 @@ using namespace std;
     example, if the user enters "Palmer" the program should display all objects matching
     "Palmer" whether if its Many, One or No items are found.
  */
-
 //Added constant because regular int in main body wont work for some reason.
-
 const int NUM = 11;
 
 int main() {
-    int counter = 1;
-    string userStr;
+    int i, finder, counter = 1;
+    string userStr, match;
     string contacts[NUM] = {"Becky Warren --- 555-1223",
                             "Joe Looney ----- 555-0097",
                             "Geri Palmer ---- 555-8787",
@@ -30,21 +28,34 @@ int main() {
                             "Jean James ----- 555-4939",
                             "Ron Palmer ----- 555-2783" };
     
-    cout << " All Contacts in Phone Number List\n";
-    cout << "-----------------------------------\n";
+    cout << "----------------------------------\n";
+    cout << "|  Contact List                  |\n";
+    cout << "----------------------------------\n";
     for(int x = 0; x < NUM; x++){
-        if(x <= 8){ // Displays the same thing, "If" is for cosmetic appearance
-            cout << "   " << x + 1 << "  " << contacts[x] << endl;
+        if(x <= 8){
+            cout << "|  " << x + 1 << "  " << contacts[x] << "  |\n";
         } else {
-            cout << "   " << x + 1 << " " << contacts[x] << endl;
-    }   }
+            cout << "|  " << x + 1 << " " << contacts[x] << "  |\n";
+        }
+    }
+    cout << "----------------------------------\n";
     
-    cout << "\nEnter a name or a partial to search the list: ";
+    cout << "\nEnter a name or part of a name to search the list: ";
     cin >> userStr;
-    cout << "Names Matched:\n";
-    for (int i = 0; i < NUM; i++){
-        int finder = contacts[i].find(userStr, 0);
-        if (finder > 0){
-            cout << counter << ": " << contacts[i] << endl;
+    
+    cout << "----------------------------------\n";
+    cout << "|  Names Matched                 |\n";
+    cout << "----------------------------------\n";    
+    
+    for (i = 0; i < NUM; i++){
+        finder = contacts[i].find(userStr);
+        if (finder > -1){
+            cout << "|  "<< counter << "  " << contacts[i] << "  |\n";
             counter++;
-}   }   }
+        }
+        finder = -1;
+    }
+    cout << "----------------------------------\n"; 
+    
+    return 0;
+}
