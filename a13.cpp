@@ -17,70 +17,12 @@ private:
 public:
     Date(int, int, int);
     void setDate(int, int, int);
+    string getMonth(int);
     void dateInformal();
     void dateFormal();
     void dateEurope();
-    string getMonth(int);
+    
 };
-
-//Constructor
-Date::Date(int m, int d, int y){
-    month = m;
-    day = d;
-    year = y;
-}
-
-void Date::setDate(int m, int d, int y){
-    month = m;
-    day = d;
-    year = y;
-}
-
-void dateInformal(){
-    //cout << "Informal: " << month << "/" << day << "/" << year << endl;
-}
-
-void dateFormal(){
-    //cout << "Formal: " << month << " " << day << ", " << year << endl;
-}
-
-void dateEurope(){
-    //cout << "EU Format: " << day << " " << month << ", " << year << endl;
-}
-
-string Date::getMonth(int m){
-    string month;
-    
-    switch(m){
-        case 1: month = "January";
-            break;
-        case 2: month = "February";
-            break;
-        case 3: month = "March";
-            break;
-        case 4: month = "April";
-            break;
-        case 5: month = "May";
-            break;
-        case 6: month = "June";
-            break;
-        case 7: month = "July";
-            break;
-        case 8: month = "August";
-            break;
-        case 9: month = "September";
-            break;
-        case 10: month = "October";
-            break;
-        case 11: month = "November";
-            break;
-        case 12: month = "December";
-            break;
-        default: cout << "Invalid Number\n";
-    }
-    
-    return month;
-}
 
 int main(){
     //added main infront of variables for readability and clarity of main Variables
@@ -122,37 +64,74 @@ int main(){
     cout << "Enter the year: ";
     cin >> mainYear;
     
-    if(mainYear < 1950){
-        bVal = true;
-        while(bVal){
-            cout << "hmm... okay, Please enter a year after 1950: ";
-            cin >> mainYear;
-            if(mainYear > 1950){
-                bVal = false;
-            }
-        }
-    }
-
+    mainDate.setDate(mainMonth, mainDay, mainYear);
+    cout << endl;cout << endl;
+    mainDate.dateInformal();
+    cout << endl;
+    mainDate.dateFormal();
+    cout << endl;
+    mainDate.dateEurope();
+    
     return 0;
 }
 
+//Constructor
+Date::Date(int m, int d, int y){
+    month = m;
+    day = d;
+    year = y;
+}
 
+void Date::setDate(int m, int d, int y){
+    month = m;
+    day = d;
+    year = y;
+}
 
+void Date::dateInformal(){
+    cout << "Informal:  \n" << month << "/" << day << "/" << year << endl;
+}
 
+void Date::dateFormal(){
+    string monthString = getMonth(month);
+    cout << "Formal:    \n" << monthString << " " << day << ", " << year << endl;
+}
 
+void Date::dateEurope(){
+    string monthString = getMonth(month);
+    cout << "EU Format: \n" << day << " " << monthString << " " << year << endl;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+string Date::getMonth(int m){
+    string month;
+    
+    switch(m){
+        case 1: month = "January";
+            break;
+        case 2: month = "February";
+            break;
+        case 3: month = "March";
+            break;
+        case 4: month = "April";
+            break;
+        case 5: month = "May";
+            break;
+        case 6: month = "June";
+            break;
+        case 7: month = "July";
+            break;
+        case 8: month = "August";
+            break;
+        case 9: month = "September";
+            break;
+        case 10: month = "October";
+            break;
+        case 11: month = "November";
+            break;
+        case 12: month = "December";
+            break;
+        default: cout << "Invalid Number\n";
+    }
+    
+    return month;
+}
