@@ -2,17 +2,16 @@
 ##### Class Name: 
 CIS-265 Adv. Programming Concepts 
 ##### Textbook:
-Starting Out with C++ Brief Version, 7th Edition
-##### Author:
-Tony Gaddis
-##### Misc:
-- Pearson 2012
-- ISBN 10: 0-13-277289-2
-- ISBN 13: 978-0-13-277289-1
+- Starting Out with C++ Brief Version, 7th Edition
+  - Author: Tony Gaddis
+  - Misc:
+    - Pearson 2012
+    - ISBN 10: 0-13-277289-2
+    - ISBN 13: 978-0-13-277289-1
 
-## Assignments:
 > TIP: press " CMD + F " to search for specific assignments faster
 
+## Assignments:
 ##### **[Full Group Project] / [DailyEats()]**
 #
 ##### 1. **[Hotel Occupancy]**
@@ -29,7 +28,7 @@ Tony Gaddis
 ##### 12. **[Inventory Program]**
 ##### 13. **[Date]**
 #
-#### Group Project -- Travel Expenses
+#### Group Project - Travel Expenses
 
 - **[DailyEats()]** - Link to my portion of the project
 - **[Full Group Project]** - Link to the full project
@@ -73,11 +72,11 @@ Tony Gaddis
     - $12 - Lunch
     - $16 - Dinner
 
-#### 1. Hotel Occupancy
+#### 1. Hotel Occupancy: [A1.CPP](<https://github.com/Uben/CPP/blob/master/a1.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 295, Problem #9 
-#### 2. Winning Division
+#### 2. Winning Division: [A2.CPP](<https://github.com/Uben/CPP/blob/master/a2.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 369, Problem #3
@@ -99,43 +98,53 @@ The program should use two overloaded functions to calculate the total charges. 
 
 > Input Validation: Do not accept negative numbers or any data.
 
-#### 4. Rainfall Statistics [A4.CPP](<https://github.com/Uben/CPP/blob/master/a4.cpp>)
+#### 4. Rainfall Statistics: [A4.CPP](<https://github.com/Uben/CPP/blob/master/a4.cpp>)
 ##### Assignment Directons:
 #
+###### Page 444, Problem #2
+Write a program that lets the user enter the total rainfall for each of 12 months into an array of doubles. The program should calculate and display the total rainfall for the year, the average monthly rainfall, and the months with the highest and lowest ammounts.
 
 > Input Validation: Do not accept negative numbers for monthly rainfall statistics.
-###### Page 444, Problem #2
 
-#### 5. 2D Array Operations [A5.CPP](<https://github.com/Uben/CPP/blob/master/a5.cpp>)
+#### 5. 2D Array Operations: [A5.CPP](<https://github.com/Uben/CPP/blob/master/a5.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 448, Problem #16
+Write a program that creates a two-dimensional array initialized with test data. Use any data type you wish. The program should have the following functions:
+- **getTotal.** This function should accept a two-dimensional array as its argument and return the total of all the values in the array.
+- **getAverage.** This function should accept a two-dimensional array as its argument and return the average of all the values in the array.
+- **getRowTotal.** This function should accept a two-dimensional array as its first argument and an integer as its second. The second argument should be the subscript of a row in the array. The function should return the total of the values in the specified row.
+- **getColumnTotal.** This function should accept a two-dimensional array as its first argument and an integer as its second. The second argument should be the subscript of a column in the array. The function should return the total of the values in the specified column.
+- **getHighestInRow.** This function should accept a two-dimensional array as its first argument and an integer as its second. The second argument should be the subscript of a row in the array. The function should return the highest value in the specified row of the array.
+- **getLowestInRow.** This function should accept a two-dimensional array as its first argument and an integer as its second. The second argument should be the subscript of a row in the array. The function should return the lowest value in the specified row of the array.
 
-#### 6. Array Allocator [A6.CPP](<https://github.com/Uben/CPP/blob/master/a6.cpp>)
+Demonstrate each of the functions in this program.
+
+#### 6. Array Allocator: [A6.CPP](<https://github.com/Uben/CPP/blob/master/a6.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 537, Problem #1
 Write a function that dynamically allocates an array of integers.The function should accept an integer argument indicating the number of elements to allocate. This function should return a pointer to the array.
 
-#### 7. Array Expander [A7.CPP](<https://github.com/Uben/CPP/blob/master/a7.cpp>)
+#### 7. Array Expander: [A7.CPP](<https://github.com/Uben/CPP/blob/master/a7.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 539, Problem #11
 Write a function that accepts an INT array and the array's size as arguments. The function should create a new array that is twice the size of the argument array. The function should copy the contents of the argument array to the new array, and initialize the unused elements of the second array with 0. The function should return a pointer to the new array.
 
-#### 8. String Length [A8.CPP](<https://github.com/Uben/CPP/blob/master/a8.cpp>)
+#### 8. String Length: [A8.CPP](<https://github.com/Uben/CPP/blob/master/a8.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 588, Problem #1
 Write a function that returns an integer and accepts a pointer to a C-string as an argument. the function should count the number of characters in the string and return that number. Demonstrate the function in a simple program that asks the user to input a string. Passes it to the function, and then displays the function's return value.
 
-#### 9. Phone Number List [A9.CPP](<https://github.com/Uben/CPP/blob/master/a9.cpp>)
+#### 9. Phone Number List: [A9.CPP](<https://github.com/Uben/CPP/blob/master/a9.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 592, Problem #18
 Write a program that has an array of atleast 10 string objects that hold people's names and phone numbers. You may make up your own strings, or use the example. The program should ask the user to enter a name or partial to search for in the array. Any entries in the array that match the string entered should be displayed. For example, if the user enters "Palmer" the program should display all objects matching "Palmer" whether if its Many, One or No items are found.
 
-#### 10. Movie Data [A10.CPP](<https://github.com/Uben/CPP/blob/master/a10.cpp>)
+#### 10. Movie Data: [A10.CPP](<https://github.com/Uben/CPP/blob/master/a10.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 645, Problem #1
@@ -147,7 +156,7 @@ Write a program that uses a structure named "MovieData" to store the following i
     
 The program should create two MovieData variables, store variables in their members, and pass each one, in turn, to a function that displays the information about the movie in a clearly formatted Manner.
 
-#### 11. Monthly Budget [A11.CPP](<https://github.com/Uben/CPP/blob/master/a11.cpp>)
+#### 11. Monthly Budget: [A11.CPP](<https://github.com/Uben/CPP/blob/master/a11.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 647, Problem #11
@@ -165,7 +174,7 @@ A student has estalbished the following monthly budget:
 
 Write a program that has a MonthlyBudget structure designed to hold each of these expense categories. The program should pass the structure to a function that asks the user to enter the ammounts spent in each budget caegory during a month. The origram shuld then passthe structure to a function that displays a report indicating the amount over or under in each category, as well as the amount over or under for the entire monthly budget.
 
-#### 12. Inventory Program [A12.CPP](<https://github.com/Uben/CPP/blob/master/a12.cpp>)
+#### 12. Inventory Program: [A12.CPP](<https://github.com/Uben/CPP/blob/master/a12.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 702, Problem #13
@@ -183,7 +192,7 @@ The program should have a menu that allows the user to preform the following tas
 
 > Input Validation: The program should not accept any quantities, or wholesale, or retail costs, less than 0. The program should not accept dates that the programmer determines are unreasonable.
 
-#### 13. Date [A13.CPP](<https://github.com/Uben/CPP/blob/master/a13.cpp>)
+#### 13. Date: [A13.CPP](<https://github.com/Uben/CPP/blob/master/a13.cpp>)
 ##### Assignment Directons:
 #
 ###### Page 791, Problem #1
