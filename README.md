@@ -11,25 +11,26 @@ Tony Gaddis
 - ISBN 13: 978-0-13-277289-1
 
 ## Assignments:
-> TIP: press " CMD + F " to search for assignments
-1) **[Full Group Project]**
-1. **[Hotel Occupancy]**
-2. **[Winning Division]**
-3. **[Overloaded Hospital]**
-4. **[Rainfall Statistics]**
-5. **[2D Array Operations]**
-6. **[Array Allocator]**
-7. **[Array Expander]**
-8. **[String Length]**
-9. **[Phone Number List]**
-10. **[Movie Data]**
-11. **[Monthly Budget]**
-12. **[Inventory Program]**
-13. **[Date]**
-
+> TIP: press " CMD + F " to search for specific assignments faster
+##### **[Full Group Project] / [DailyEats()]**
+#
+##### 1. **[Hotel Occupancy]**
+##### 2. **[Winning Division]**
+##### 3. **[Overloaded Hospital]**
+##### 4. **[Rainfall Statistics]**
+##### 5. **[2D Array Operations]**
+##### 6. **[Array Allocator]**
+##### 7. **[Array Expander]**
+##### 8. **[String Length]**
+##### 9. **[Phone Number List]**
+##### 10. **[Movie Data]**
+##### 11. **[Monthly Budget]**
+##### 12. **[Inventory Program]**
+##### 13. **[Date]**
+#
 #### Group Project -- Travel Expenses
-- **[My Portion]** - Link
-- **[Full Group Project]** - Link
+- **[DailyEats()]** - Link to my portion of the project
+- **[Full Group Project]** - Link to the full project
 
 ##### Group Members: 
 - ###### Elizabeth Boby - Project Manager
@@ -37,24 +38,24 @@ Tony Gaddis
 - ###### Lient - Project Manager / Programmer
  
 - ###### **Bernin Uben - Programmer (ME)**
-    1) **void dailyEats();**
+  -**void dailyEats();**
  
 - ###### Mike - Programmer
-    1) double numAirfare (double airfare);
-    2) double numCarRental (double carRental);
+  - double numAirfare (double airfare);
+  - double numCarRental (double carRental);
  
 - ###### Kang - Programmer
-    1) double depTimeDepart(double departure);
-    2) double depTimeArrival(double arrival);
-    5) double miles(double miles);
-    6) double parking (double park);
+  - double depTimeDepart(double departure);
+  - double depTimeArrival(double arrival);
+  - double miles(double miles);
+  - double parking (double park);
  
 - ###### Joe - Programmer
-    1) Double numConference (double conference);
-    2) Double numTaxi (double taxi);
-    3) Double numHotel (double hotel);
+  - Double numConference (double conference);
+  - Double numTaxi (double taxi);
+  - Double numHotel (double hotel);
 
-##### Assigment directions for [my portion].
+##### Assigment directions for [DailyEats()]
 - Main: Get the $ ammount of each allowed meal eaten on each day.
 - On the first day of the trip: 
     - Breakfast is allowed if time of departure is before 7 a.m. 
@@ -212,5 +213,5 @@ Demonstrate the class by writing a complete program implementing it.
 [Inventory Program]: <https://github.com/Uben/CPP/blob/master/a12.cpp>
 [Date]: <https://github.com/Uben/CPP/blob/master/a13.cpp>
 [My Portion]: <https://github.com/Uben/CPP/blob/master/groupProject.cpp>
-[my portion]: <https://github.com/Uben/CPP/blob/master/groupProject.cpp>
+[DailyEats()]: <https://github.com/Uben/CPP/blob/master/groupProject.cpp>
 [Full Group Project]: <https://github.com/Uben/CPP/blob/master/groupProjectCompleted.cpp>
