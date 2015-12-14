@@ -12,6 +12,7 @@ Tony Gaddis
 
 ## Assignments:
 > TIP: press " CMD + F " to search for specific assignments faster
+
 ##### **[Full Group Project] / [DailyEats()]**
 #
 ##### 1. **[Hotel Occupancy]**
@@ -29,33 +30,34 @@ Tony Gaddis
 ##### 13. **[Date]**
 #
 #### Group Project -- Travel Expenses
+
 - **[DailyEats()]** - Link to my portion of the project
 - **[Full Group Project]** - Link to the full project
 
 ##### Group Members: 
 - ###### Elizabeth Boby - Project Manager
  
-- ###### Lient - Project Manager / Programmer
+- ###### Lient Blanco - Project Manager / Programmer
  
 - ###### **Bernin Uben - Programmer (ME)**
-  -**void dailyEats();**
+  - **void dailyEats();**
  
-- ###### Mike - Programmer
+- ###### Mike Chazulle - Programmer
   - double numAirfare (double airfare);
   - double numCarRental (double carRental);
  
-- ###### Kang - Programmer
+- ###### Kang Bae - Programmer
   - double depTimeDepart(double departure);
   - double depTimeArrival(double arrival);
   - double miles(double miles);
   - double parking (double park);
  
-- ###### Joe - Programmer
-  - Double numConference (double conference);
-  - Double numTaxi (double taxi);
-  - Double numHotel (double hotel);
+- ###### Joseph Salsbury - Programmer
+  - double numConference (double conference);
+  - double numTaxi (double taxi);
+  - double numHotel (double hotel);
 
-##### Assigment directions for [DailyEats()]
+#### Assigment directions for [DailyEats()]
 - Main: Get the $ ammount of each allowed meal eaten on each day.
 - On the first day of the trip: 
     - Breakfast is allowed if time of departure is before 7 a.m. 
@@ -194,6 +196,7 @@ Design a CLASS called "Date". The class should store a date in three integers: "
 Demonstrate the class by writing a complete program implementing it.
 
 > Input Validation: Do not accept values for the day greater than 31 or less than 1. Do not accept values for the month greater than 12 or less than 1.
+
 #
 #
 #
