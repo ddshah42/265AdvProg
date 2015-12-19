@@ -1,6 +1,6 @@
 # C++ Assignment Solutions
-##### Class Name: 
-CIS-265 Adv. Programming Concepts 
+##### Class: 
+CIS-265 Advanced Programming Concepts 
 ##### Textbook:
 - Starting Out with C++ Brief Version, 7th Edition
   - Author: Tony Gaddis
@@ -209,6 +209,8 @@ Demonstrate the class by writing a complete program implementing it.
 #
 #
 #
+
+### Class Duration: September 1st - December 21st 2015
 ### Bernin Alejandro Uben Santana
 
 [Hotel Occupancy]: <https://github.com/Uben/CPP/blob/master/a1.cpp>
